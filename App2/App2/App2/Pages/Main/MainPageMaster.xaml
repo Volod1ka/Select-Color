@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lan="clr-namespace:App2.Languages"
+             x:Class="App2.Pages.MainPageMaster"
+             Title="Master">
+    
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Grid x:Name="GridHeader" BackgroundColor="#03A9F4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="LabelDetailPage" Grid.Column="1" Grid.Row="2" Text="{x:Static lan:Language.LabelDetailPage}" Style="{DynamicResource SubtitleStyle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Grid>
+
+            <StackLayout Padding="15,10" VerticalOptions="Start" HorizontalOptions="Center">
+                <Label Text="Timer" FontSize="24"/>
+                <Picker x:Name="TimePicker" Title="{x:Static lan:Language.TimePickerTitle}"></Picker>
+            </StackLayout>
+
+            <StackLayout Padding="15,10" VerticalOptions="Start" HorizontalOptions="Center">
+                <Label Text="Language" FontSize="24"/>
+            <Picker x:Name="LanguagePicker" Title="{x:Static lan:Language.LanguagePickerTitle}"></Picker>
+            </StackLayout>
+
+        <StackLayout Padding="15,10" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button x:Name="ButtonSave" Text="{x:Static lan:Language.ButtonSave}" Style="{DynamicResource ButtonStyle}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                        Factor=.1, Constant=0}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                        Property=Width, Factor=.4, Constant=0}"
+                        Clicked="ButtonSave_Clicked"/>
+                <Button x:Name="ButtonRestart" Text="{x:Static lan:Language.ButtonRestart}" Style="{DynamicResource ButtonStyle}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                        Factor=.6, Constant=0}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                        Property=Width, Factor=.4, Constant=0}"
+                        Clicked="ButtonRestart_Clicked"/>
+            </StackLayout>
+    </StackLayout>
+</ContentPage>

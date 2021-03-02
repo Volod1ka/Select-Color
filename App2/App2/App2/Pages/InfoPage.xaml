@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lan="clr-namespace:App2.Languages"
+             x:Class="App2.InfoPage">
+    
+    <!--h&#10;-->
+    <StackLayout>
+        <StackLayout BackgroundColor="#2196F3" Padding="24">
+            <Label x:Name="TitleLabel" Text="{x:Static lan:Language.TitleLabel}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </StackLayout>
+        
+        <RelativeLayout VerticalOptions="CenterAndExpand">
+            <Entry x:Name="EntryUserName" FontSize="36" HorizontalTextAlignment="Center" VerticalTextAlignment="End" MaxLength="12" Placeholder="{x:Static lan:Language.EntryUserNamePlaceholder}" TextColor="Gray"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                   Factor=.1, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                   Property=Width, Factor=.8, Constant=0}"
+                   TextChanged="EntryUserName_TextChanged"
+                   />
+        </RelativeLayout>
+        
+        <RelativeLayout x:Name="PickerLoyout" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="ButtonStart" Text="{x:Static lan:Language.ButtonStart}" Style="{DynamicResource ButtonStyle}" IsEnabled="False"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                    Factor=.1, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=.3, Constant=0}"
+                    Clicked="ButtonStart_Clicked"/>
+            <Button x:Name="ButtonExit" Text="{x:Static lan:Language.ButtonExit}" Style="{DynamicResource ButtonStyle}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                    Factor=.6, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=.3, Constant=0}"
+                    Clicked="ButtonExit_Clicked"/>
+        </RelativeLayout>
+    </StackLayout>
+</ContentPage>

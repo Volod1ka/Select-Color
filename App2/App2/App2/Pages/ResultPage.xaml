@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lan="clr-namespace:App2.Languages"
+             x:Class="App2.Pages.ResultPage">
+
+    <!--h&#10;-->
+    <StackLayout>
+        <StackLayout BackgroundColor="#2196F3" Padding="24">
+            <Label x:Name="TitleLabel" Text="{x:Static lan:Language.TitleLabelResult}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </StackLayout>
+        
+        <RelativeLayout VerticalOptions="CenterAndExpand">
+            <Label x:Name="ResultLabel" Text="" HorizontalTextAlignment="Center" FontSize="36"/> 
+        </RelativeLayout>
+        
+        <RelativeLayout x:Name="PickerLoyout" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="ButtonTryAgain" Text="{x:Static lan:Language.ButtonTryAgain}" Style="{DynamicResource ButtonStyle}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                    Factor=.05, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=.4, Constant=0}"
+                    Clicked="ButtonTryAgain_Clicked"/>
+            <Button x:Name="ButtonToInfoPage" Text="Повернутися до меню" Style="{DynamicResource ButtonStyle}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                    Factor=.55, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=.4, Constant=0}"
+                    Clicked="ButtonToInfoPage_Clicked"/>
+        </RelativeLayout>
+    </StackLayout>
+</ContentPage>

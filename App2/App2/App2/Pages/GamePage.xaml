@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lan="clr-namespace:App2.Languages"
+             x:Class="App2.GamePage"
+             Title="Color picker">
+
+    <!--h&#10;-->
+    <StackLayout>
+        <StackLayout BackgroundColor="#2196F3" Padding="24">
+            <Label x:Name="TitleLabel" Text="{x:Static lan:Language.GameTitleLabel}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </StackLayout>
+        
+        <FlexLayout Direction="Column">
+            <Label x:Name="tTimer" Text="{x:Static lan:Language.tTimer}"  FontSize="32" HorizontalTextAlignment="Center"/>
+            <ProgressBar x:Name="ProgressBarTimer" BackgroundColor="White" ProgressColor="#2196F3" Progress="1"/>
+        </FlexLayout>
+        
+        <Grid VerticalOptions="CenterAndExpand">
+            <ActivityIndicator Grid.Row="0" x:Name="ActiveIndicator" Color="#2196F3" WidthRequest="200" HeightRequest="200"/>
+            <Label Grid.Row="0" x:Name="LabelColor" Text="{x:Static lan:Language.LabelColor}" FontSize="36" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </Grid>
+        
+        <RelativeLayout x:Name="PickerLoyout" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="ButtonYes" Text="{x:Static lan:Language.ButtonYes}" Style="{DynamicResource ButtonStyle}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                    Factor=.1, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=.3, Constant=0}"
+                    Clicked="ButtonYes_Clicked"/>
+            <Button x:Name="ButtonNo" Text="{x:Static lan:Language.ButtonNo}" Style="{DynamicResource ButtonStyle}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,
+                    Factor=.6, Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=.3, Constant=0}"
+                    Clicked="ButtonNo_Clicked"/>
+        </RelativeLayout>
+    </StackLayout>
+</ContentPage>
